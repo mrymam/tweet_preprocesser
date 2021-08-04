@@ -11,7 +11,7 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 setup(
     name=package_name,
-    version='0.0.2',
+    version='0.0.3',
     description='tweet preprocesser',
     long_description=long_description,
     long_description_content_type='text/markdown',

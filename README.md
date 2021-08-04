@@ -1,5 +1,10 @@
 ## tweet preprocesser
 
+tweet preprocesser (remove hashtag, mention and url)
+
+pypi module
+https://pypi.org/project/tweet-preprocesser/
+
 ## install
 ```
 $ pip install tweet-preprocesser
