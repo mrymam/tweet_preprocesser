@@ -2,3 +2,4 @@
 .pytest_cache
 *__pycache__
 tweet_preprocesser.egg-info
+dist/*
