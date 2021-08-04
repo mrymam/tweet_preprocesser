@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  test:
+    build: ./
+    volumes:
+      - ./:/home
+    command: pytest tweet_preprocesser/test
+    # command: python src/test/main.py
+  export:
+    build: ./
+    volumes:
+      - ./:/home
+    command: python setup.py sdist bdist_wheel
+
+  publish-test:
+    build: ./
+    volumes:
+      - ./:/home
+    command: twine upload --repository testpypi dist/* --config-file .pypirc
+
+  test-pypi:
+    build: ./pypi_test
+    volumes:
+      - ./pypi_test:/home
+    command: pytest test.py
+    # command: cat requirements.txt
+
+  publish:
+    build: ./
+    volumes:
+      - ./:/home
+    command: twine upload --repository pypi dist/* --config-file .pypirc
